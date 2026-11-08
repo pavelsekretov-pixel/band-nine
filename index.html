@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Band Nine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Hind:wght@400;500;600;700&display=swap">
+
+<style>
+/* Layout: dense 560px mobile column with full-bleed tinted bands; social proof and price anchors above the fold; sticky CTA bar. */
+:root{
+  --bg:#FFFFFF;
+  --tint:#F0F2FF;
+  --sun:#FFF7DE;
+  --card:#FFFFFF;
+  --ink:#14183A;
+  --ink-2:#555C7C;
+  --ink-3:#8A90AA;
+  --line:#E3E6F2;
+  --brand:#3B2BD6;
+  --brand-soft:#ECEAFF;
+  --saffron:#FF7A00;
+  --saffron-soft:#FFF0DF;
+  --green:#0E9F57;
+  --green-soft:#E2F7EB;
+  --wa:#1FAF54;
+  --red:#E0393E;
+  --yellow:#FFC83A;
+  --on-brand:#FFFFFF;
+  --sh:0 2px 4px rgba(20,24,58,.05), 0 10px 26px rgba(20,24,58,.08);
+  --sh-1:0 1px 3px rgba(20,24,58,.08);
+  --head:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Hind","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1024;--tint:#161A38;--sun:#2A2414;--card:#181C3A;--ink:#F1F2FA;--ink-2:#A9AECB;--ink-3:#767C9C;
+    --line:#2A2F52;--brand:#8A7CFF;--brand-soft:#232552;--saffron:#FF9A3D;--saffron-soft:#2E2113;
+    --green:#3FD38A;--green-soft:#12301F;--wa:#3FD38A;--red:#FF6B6F;--yellow:#FFD15C;--on-brand:#0E1024;
+    --sh:0 2px 4px rgba(0,0,0,.3), 0 10px 26px rgba(0,0,0,.35);--sh-1:0 1px 3px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1024;--tint:#161A38;--sun:#2A2414;--card:#181C3A;--ink:#F1F2FA;--ink-2:#A9AECB;--ink-3:#767C9C;
+  --line:#2A2F52;--brand:#8A7CFF;--brand-soft:#232552;--saffron:#FF9A3D;--saffron-soft:#2E2113;
+  --green:#3FD38A;--green-soft:#12301F;--wa:#3FD38A;--red:#FF6B6F;--yellow:#FFD15C;--on-brand:#0E1024;
+  --sh:0 2px 4px rgba(0,0,0,.3), 0 10px 26px rgba(0,0,0,.35);--sh-1:0 1px 3px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.08;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer;font-family:var(--body)}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+.in{max-width:560px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:26px}
+.band.tint{background:var(--tint)}
+.band.sun{background:var(--sun)}
+.main{padding-bottom:40px}
+.main.hasbar{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+.main.hastabs{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+
+/* ВЕРХ */
+.offer{background:var(--brand);color:var(--on-brand);text-align:center;font-size:13.5px;font-weight:600;padding-block:7px}
+.top{display:flex;align-items:center;gap:8px;padding-block:10px;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--head);font-weight:800;font-size:21px;letter-spacing:-.02em;flex:1;min-width:0}
+.logo b{color:var(--saffron)}
+.wa-pill{display:inline-flex;align-items:center;gap:6px;background:var(--wa);color:#fff;border:0;border-radius:100px;
+  padding:7px 12px;font-size:13.5px;font-weight:700;flex:none}
+.chip-btn{background:var(--tint);border:1px solid var(--line);color:var(--ink-2);border-radius:100px;padding:6px 11px;font-size:12.5px;font-weight:600;flex:none}
+
+/* КНОПКИ */
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:14px;
+  background:var(--saffron);color:#fff;padding:16px 18px;font-family:var(--head);font-size:19px;font-weight:700;
+  box-shadow:0 6px 0 #C85E00, 0 10px 22px rgba(255,122,0,.3);transition:transform .08s, box-shadow .08s}
+.cta:active{transform:translateY(4px);box-shadow:0 2px 0 #C85E00, 0 4px 10px rgba(255,122,0,.25)}
+.cta:disabled{background:var(--line);color:var(--ink-3);box-shadow:none;transform:none;cursor:default}
+.cta.brand{background:var(--brand);color:var(--on-brand);box-shadow:0 6px 0 #2A1DA3, 0 10px 22px rgba(59,43,214,.28)}
+.cta.brand:active{box-shadow:0 2px 0 #2A1DA3}
+.ghost{background:var(--card);border:1.5px solid var(--line);color:var(--ink-2);border-radius:12px;padding:13px 16px;font-size:15.5px;font-weight:600;width:100%}
+.ghost.danger{color:var(--red);border-color:var(--red)}
+.fine{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.sec-h{font-size:clamp(23px,6vw,28px);margin-bottom:6px}
+.sec-s{font-size:15px;color:var(--ink-2);margin-bottom:16px}
+
+/* ГЕРОЙ */
+.hero{padding-block:20px 22px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--saffron-soft);color:var(--saffron);border-radius:100px;
+  padding:5px 12px;font-size:13px;font-weight:700;margin-bottom:12px}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--saffron);display:block}
+.hero h1{font-size:clamp(30px,8.4vw,42px);font-weight:800;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--brand);background:linear-gradient(transparent 62%, var(--yellow) 62%);padding:0 2px}
+.hero .lede{font-size:17px;color:var(--ink-2);margin-bottom:16px}
+.ticks{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px}
+.ticks span{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.ticks svg{color:var(--green);flex:none}
+
+/* СТАТЫ */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card);border-radius:14px;padding:13px 14px;box-shadow:var(--sh-1);min-width:0}
+.stat .n{font-family:var(--head);font-size:27px;font-weight:800;line-height:1;color:var(--brand);font-variant-numeric:tabular-nums}
+.stat.hot .n{color:var(--saffron)}
+.stat .t{font-size:13.5px;color:var(--ink-2);margin-top:5px;line-height:1.35}
+
+/* ШКАЛА */
+.bandpick{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:12px}
+.bp{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:10px 2px 8px;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
+.bp .v{font-family:var(--head);font-size:22px;font-weight:800;line-height:1.1}
+.bp .l{font-size:11.5px;font-weight:600;color:var(--ink-3)}
+.bp[aria-pressed="true"]{border-color:var(--brand);background:var(--brand);color:var(--on-brand)}
+.bp[aria-pressed="true"] .l{color:var(--on-brand);opacity:.85}
+.unl{background:var(--card);border-radius:12px;padding:12px 14px;font-size:15px;color:var(--ink-2);box-shadow:var(--sh-1);min-height:3.4em}
+.unl b{color:var(--ink)}
+
+/* СТРАНЫ */
+.countries{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ctry{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.ctry .cc{width:34px;height:34px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;
+  font-family:var(--head);font-weight:800;font-size:13px;color:#fff}
+.ctry .cd{min-width:0;flex:1;line-height:1.25;hyphens:auto;overflow-wrap:anywhere}
+.ctry .cd b{display:block;font-size:14.5px;font-weight:700}
+.ctry .cd span{font-size:12.5px;color:var(--ink-2)}
+.ctry .cs{margin-left:auto;font-family:var(--head);font-size:20px;font-weight:800;color:var(--brand);flex:none}
+
+/* ОТЗЫВЫ */
+.sample-banner{display:flex;gap:8px;align-items:flex-start;background:var(--saffron-soft);border:1.5px dashed var(--saffron);border-radius:10px;
+  padding:9px 12px;font-size:13px;color:var(--ink);margin-bottom:12px;font-weight:500}
+.sample-banner b{color:var(--saffron);font-weight:700;white-space:nowrap}
+.revs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin-inline:-2px;padding-inline:2px}
+.rev{flex:0 0 82%;max-width:330px;scroll-snap-align:start;background:var(--card);border-radius:16px;padding:15px;box-shadow:var(--sh);min-width:0;display:flex;flex-direction:column;gap:10px}
+.rev .rh{display:flex;align-items:center;gap:10px}
+.av{width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:19px;color:#fff}
+.rev .who{min-width:0;flex:1;line-height:1.25}
+.rev .who b{display:block;font-size:15px}
+.rev .who span{font-size:12.5px;color:var(--ink-2)}
+.smp{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--saffron);border:1px solid var(--saffron);border-radius:5px;padding:1px 6px;flex:none}
+.jump{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:800}
+.jump .from{font-size:20px;color:var(--ink-3);text-decoration:line-through;text-decoration-thickness:2px}
+.jump .to{font-size:26px;color:var(--green)}
+.jump svg{color:var(--green)}
+.rev q{font-size:14.5px;color:var(--ink);line-height:1.5;quotes:none}
+
+/* ШАГИ */
+.steps{display:flex;flex-direction:column;gap:10px}
+.st{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:14px;padding:13px 14px;box-shadow:var(--sh-1)}
+.st .sn{width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--on-brand);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:17px}
+.st b{display:block;font-size:16px;margin-bottom:1px}
+.st p{font-size:14px;color:var(--ink-2)}
+.free{display:inline-block;background:var(--green-soft);color:var(--green);font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:5px;margin-left:4px;vertical-align:2px}
+
+/* СРАВНЕНИЕ ЦЕНЫ */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vsc{border-radius:16px;padding:15px 14px;min-width:0}
+.vsc.bad{background:var(--card);border:2px solid var(--line)}
+.vsc.good{background:var(--brand);color:var(--on-brand);box-shadow:var(--sh)}
+.vsc .vl{font-size:13.5px;font-weight:600;line-height:1.3;margin-bottom:8px;opacity:.9}
+.vsc .vp{font-family:var(--head);font-size:30px;font-weight:800;line-height:1}
+.vsc.bad .vp{color:var(--red)}
+.vsc .vn{font-size:12.5px;margin-top:6px;opacity:.85;line-height:1.35}
+
+/* FAQ */
+.faq details{background:var(--card);border-radius:12px;box-shadow:var(--sh-1);margin-bottom:8px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:14px 44px 14px 15px;font-weight:700;font-size:15.5px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:var(--head);font-size:24px;font-weight:700;color:var(--brand)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 15px 15px;font-size:14.5px;color:var(--ink-2)}
+
+/* ЛИПКАЯ ПАНЕЛЬ */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(20,24,58,.08);
+  padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-top:10px}
+.sticky .in{display:flex;gap:10px;align-items:center}
+.sticky .cta{flex:1;padding:13px 14px;font-size:17px;box-shadow:0 4px 0 #C85E00}
+.wa-round{width:52px;height:52px;border-radius:14px;background:var(--wa);color:#fff;border:0;flex:none;display:flex;align-items:center;justify-content:center}
+
+/* КВИЗ */
+.ptop{display:flex;align-items:center;gap:10px;margin:18px 0 20px}
+.ptrack{flex:1;height:10px;border-radius:100px;background:var(--tint);overflow:hidden;min-width:0}
+.ptrack i{display:block;height:100%;border-radius:100px;background:var(--brand);transition:width .35s}
+.pnum{font-family:var(--head);font-weight:700;font-size:15px;color:var(--brand);white-space:nowrap}
+.q{font-size:clamp(24px,6.4vw,30px);font-weight:800;margin-bottom:6px}
+.qsub{font-size:15px;color:var(--ink-2);margin-bottom:16px}
+.opts{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.opt{display:flex;gap:12px;align-items:center;text-align:left;width:100%;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 14px;box-shadow:var(--sh-1)}
+.opt:hover{border-color:var(--brand)}
+.opt[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.opt .rd{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink-3);flex:none;position:relative}
+.opt[aria-pressed="true"] .rd{border-color:var(--brand)}
+.opt[aria-pressed="true"] .rd::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--brand)}
+.opt .t{min-width:0}
+.opt .t b{display:block;font-weight:700;font-size:16.5px}
+.opt .t span{display:block;font-size:13.5px;color:var(--ink-2)}
+.back{background:none;border:0;padding:4px 0;font-size:15px;font-weight:600;color:var(--ink-2)}
+.qhint{display:flex;gap:8px;align-items:center;background:var(--green-soft);color:var(--green);border-radius:10px;padding:8px 11px;font-size:13.5px;font-weight:600;margin-bottom:16px}
+
+/* РАСЧЁТ */
+.calc{padding-block:30px}
+.crow{display:flex;gap:12px;align-items:center;padding:12px 14px;background:var(--card);border-radius:12px;margin-bottom:8px;font-size:15.5px;color:var(--ink-3);box-shadow:var(--sh-1);transition:color .3s}
+.crow.on{color:var(--ink);font-weight:600}
+.crow .cd{width:24px;height:24px;border-radius:50%;background:var(--line);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s}
+.crow.on .cd{background:var(--green)}
+.crow .cd svg{opacity:0}
+.crow.on .cd svg{opacity:1}
+
+/* РЕЗУЛЬТАТ */
+.rhead{background:var(--brand);color:var(--on-brand);border-radius:18px;padding:18px;margin:16px 0 12px;box-shadow:var(--sh)}
+.rhead .rl{font-size:13.5px;font-weight:600;opacity:.85}
+.rhead h2{font-size:clamp(24px,6.4vw,30px);font-weight:800;margin:4px 0 12px}
+.scores{display:flex;align-items:center;gap:12px}
+.sc{flex:1;background:rgba(255,255,255,.14);border-radius:12px;padding:10px;text-align:center;min-width:0}
+.sc .sv{font-family:var(--head);font-size:34px;font-weight:800;line-height:1}
+.sc .sl{font-size:12.5px;font-weight:600;opacity:.85;margin-top:3px}
+.sc.goal{background:var(--yellow);color:#14183A}
+.arr{flex:none;opacity:.7}
+
+.mods{background:var(--card);border-radius:16px;box-shadow:var(--sh);padding:6px 14px;margin-bottom:12px}
+.mod{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.mod:last-child{border-bottom:0}
+.mod .mn{width:82px;flex:none;font-weight:700;font-size:15px}
+.mod .mb{flex:1;height:10px;border-radius:100px;background:var(--tint);overflow:hidden;min-width:0}
+.mod .mb i{display:block;height:100%;border-radius:100px;background:var(--brand)}
+.mod.weak .mb i{background:var(--saffron)}
+.mod .mv{width:36px;flex:none;text-align:right;font-family:var(--head);font-weight:800;font-size:19px}
+.mod.weak .mv{color:var(--saffron)}
+.mod .wk{font-size:10.5px;font-weight:700;color:var(--saffron);background:var(--saffron-soft);border-radius:5px;padding:1px 5px;margin-left:4px}
+
+.verdict{border-radius:14px;padding:14px 15px;margin-bottom:12px;background:var(--green-soft);border:2px solid var(--green)}
+.verdict.warn{background:var(--saffron-soft);border-color:var(--saffron)}
+.verdict b{display:block;font-family:var(--head);font-size:19px;font-weight:800;margin-bottom:3px}
+.verdict p{font-size:14.5px;color:var(--ink-2)}
+
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:0 0 14px}
+.metrics div{background:var(--card);border-radius:12px;padding:10px 6px;text-align:center;box-shadow:var(--sh-1);min-width:0}
+.metrics dt{font-size:11.5px;font-weight:600;color:var(--ink-2)}
+.metrics dd{margin:2px 0 0;font-family:var(--head);font-size:21px;font-weight:800;color:var(--brand)}
+.chartcard{background:var(--card);border-radius:16px;padding:12px 10px 6px;box-shadow:var(--sh);margin-bottom:16px;overflow-x:auto}
+.h3{font-size:21px;font-weight:800;margin:0 0 10px}
+.plan{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:7px}
+.plan li{display:flex;gap:10px;background:var(--card);border-radius:12px;padding:11px 13px;box-shadow:var(--sh-1);font-size:14.5px;min-width:0}
+.plan li svg{color:var(--green);flex:none;margin-top:3px}
+
+/* ПЕЙВОЛЛ */
+.urg{display:flex;gap:10px;align-items:center;background:var(--sun);border-radius:12px;padding:11px 13px;margin-bottom:16px;font-size:14.5px;font-weight:600}
+.urg .un{font-family:var(--head);font-size:26px;font-weight:800;color:var(--saffron);flex:none;line-height:1}
+.price{display:block;width:100%;text-align:left;background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:15px;margin-bottom:10px;position:relative;box-shadow:var(--sh-1)}
+.price[aria-pressed="true"]{border-color:var(--brand);background:var(--brand-soft)}
+.price .ribbon{position:absolute;top:-11px;left:14px;background:var(--saffron);color:#fff;font-size:12px;font-weight:700;padding:2px 10px;border-radius:100px}
+.price .row{display:flex;gap:12px;align-items:center}
+.price .rd{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink-3);flex:none;position:relative}
+.price[aria-pressed="true"] .rd{border-color:var(--brand)}
+.price[aria-pressed="true"] .rd::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--brand)}
+.price .mid{flex:1;min-width:0}
+.price .nm{display:block;font-family:var(--head);font-size:18px;font-weight:800;line-height:1.15}
+.price .sub{display:block;font-size:13px;color:var(--ink-2);margin-top:2px}
+.price .pr{text-align:right;flex:none}
+.price .old{font-size:14px;color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px;font-weight:600}
+.price .am{font-family:var(--head);font-size:26px;font-weight:800;line-height:1}
+.price .save{display:inline-block;background:var(--green);color:#fff;font-size:11.5px;font-weight:700;border-radius:5px;padding:1px 7px;margin-top:3px}
+.terms{background:var(--card);border-radius:14px;padding:13px 14px;margin:12px 0;box-shadow:var(--sh-1)}
+.terms b{display:block;font-size:15px;margin-bottom:6px}
+.terms ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.terms li{display:flex;gap:8px;font-size:13.5px;color:var(--ink-2)}
+.terms li svg{color:var(--green);flex:none;margin-top:2px}
+.guar{display:flex;gap:10px;align-items:center;background:var(--green-soft);border-radius:12px;padding:11px 13px;margin-bottom:14px;font-size:14px;font-weight:600;color:var(--ink)}
+.guar svg{color:var(--green);flex:none}
+.helpline{text-align:center;margin-top:12px;font-size:14px;color:var(--ink-2)}
+.helpline button{background:none;border:0;color:var(--wa);font-weight:700;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+/* ЧЕКАУТ */
+.bkhead{display:flex;align-items:center;gap:8px;padding-block:14px 8px}
+.bkhead button{background:none;border:0;padding:4px;color:var(--ink-2);display:flex}
+.bkhead span{font-family:var(--head);font-weight:700;font-size:18px}
+.order{background:var(--card);border-radius:14px;padding:14px;box-shadow:var(--sh);margin-bottom:12px}
+.orow{display:flex;justify-content:space-between;gap:10px;font-size:15px;padding:4px 0;color:var(--ink-2)}
+.orow b{color:var(--ink);font-weight:600}
+.orow.total{border-top:1px solid var(--line);margin-top:6px;padding-top:10px;color:var(--ink);font-weight:700}
+.orow.total span:last-child{font-family:var(--head);font-size:24px;font-weight:800}
+.pmtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px}
+.pmtab{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:11px 4px;font-weight:700;font-size:14.5px;color:var(--ink-2)}
+.pmtab[aria-pressed="true"]{border-color:var(--brand);color:var(--brand);background:var(--brand-soft)}
+.pmbody{background:var(--card);border-radius:14px;padding:14px;box-shadow:var(--sh-1);margin-bottom:12px}
+.field{margin-bottom:11px}
+.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-2);margin-bottom:4px}
+.field input{width:100%;background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:12px;font:inherit;font-size:16px;color:var(--ink)}
+.field input:focus{outline:none;border-color:var(--brand)}
+.frow{display:flex;gap:9px}
+.frow .field{flex:1;min-width:0}
+.mandate{background:var(--brand-soft);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.mandate b{display:block;font-size:14.5px;margin-bottom:3px}
+.mandate p{font-size:13.5px;color:var(--ink-2)}
+.integr{border:2px dashed var(--line);border-radius:12px;padding:11px 13px;margin-bottom:14px}
+.integr b{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--saffron);margin-bottom:3px}
+.integr p{font-size:13px;color:var(--ink-2)}
+.integr code{background:var(--saffron-soft);color:var(--saffron);border-radius:4px;padding:0 4px;font-size:12.5px}
+.secure{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--ink-3);font-weight:600}
+
+/* УСПЕХ */
+.okwrap{text-align:center;padding-block:40px 20px}
+.okc{width:84px;height:84px;border-radius:50%;background:var(--green);color:#fff;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(14,159,87,.35)}
+
+/* ПРИЛОЖЕНИЕ */
+.apphead{background:var(--brand);color:var(--on-brand);border-radius:0 0 22px 22px;padding:16px 0 18px;margin-bottom:14px}
+.apphead .in{display:flex;align-items:center;gap:12px}
+.apphead .hl{flex:1;min-width:0}
+.apphead h2{font-size:26px;font-weight:800}
+.apphead .sub{font-size:13.5px;opacity:.85;margin-top:2px}
+.ring{width:62px;height:62px;flex:none;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .rv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:16px}
+.streak{display:flex;gap:8px;margin-bottom:12px}
+.streak div{flex:1;background:var(--card);border-radius:12px;padding:10px;text-align:center;box-shadow:var(--sh-1);min-width:0}
+.streak b{display:block;font-family:var(--head);font-size:22px;font-weight:800;color:var(--saffron);line-height:1.1}
+.streak span{font-size:12px;color:var(--ink-2);font-weight:600}
+.today{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--sh);margin-bottom:12px;border:2px solid var(--brand)}
+.today .lb{display:inline-block;background:var(--saffron);color:#fff;font-size:12px;font-weight:700;border-radius:100px;padding:2px 10px;margin-bottom:8px}
+.today h3{font-size:22px;font-weight:800;margin-bottom:4px}
+.today p{font-size:14.5px;color:var(--ink-2);margin-bottom:12px}
+.week{background:var(--card);border-radius:14px;box-shadow:var(--sh-1);margin-bottom:8px;overflow:hidden}
+.whead{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:none;border:0;padding:13px 14px}
+.wn{width:34px;height:34px;border-radius:10px;background:var(--brand);color:var(--on-brand);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:16px}
+.week.locked .wn{background:var(--line);color:var(--ink-3)}
+.whead .wt{flex:1;min-width:0}
+.whead .wt b{display:block;font-size:15.5px;font-weight:700}
+.whead .wt span{display:block;font-size:12.5px;color:var(--ink-2)}
+.whead .chev{color:var(--ink-3);flex:none;transition:transform .2s}
+.week.open .chev{transform:rotate(180deg)}
+.wbody{border-top:1px solid var(--line);padding:0 14px}
+.les{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 0;font-size:15px;min-width:0}
+.wbody .les:last-child{border-bottom:0}
+.lbox{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;color:#fff}
+.les.done .lbox{background:var(--green);border-color:var(--green)}
+.lbox svg{opacity:0}
+.les.done .lbox svg{opacity:1}
+.les .lt{flex:1;min-width:0}
+.les.done .lt{color:var(--ink-3);text-decoration:line-through}
+.les .lm{flex:none;font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:6px;padding:1px 7px}
+.les.lock{color:var(--ink-3)}
+
+/* УРОК */
+.article h2{font-size:28px;font-weight:800;margin:6px 0 12px}
+.article p{font-size:16.5px;line-height:1.65;margin-bottom:13px}
+.article h4{font-family:var(--head);font-size:20px;font-weight:700;margin:20px 0 8px}
+.article ul,.article ol{padding-left:22px;margin:0 0 14px}
+.article li{margin-bottom:7px;line-height:1.6;font-size:16px}
+.article .box{background:var(--tint);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.article .box b{display:block;font-size:15.5px;margin-bottom:3px}
+.article .box p{font-size:15px;color:var(--ink-2);margin:0}
+.article .warnbox{background:var(--saffron-soft)}
+.article .goodbox{background:var(--green-soft)}
+.article code{background:var(--brand-soft);color:var(--brand);border-radius:5px;padding:1px 6px;font-size:15px;font-weight:600}
+
+/* ПРОФИЛЬ */
+.pcard{background:var(--card);border-radius:16px;padding:15px;box-shadow:var(--sh-1);margin-bottom:10px}
+.pcard .ph{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.pcard .pn{font-family:var(--head);font-size:19px;font-weight:800}
+.pcard .pa{font-family:var(--head);font-size:21px;font-weight:800}
+.pcard .pd{font-size:14px;color:var(--ink-2);margin-top:3px}
+.stl{display:inline-block;background:var(--green);color:#fff;font-size:11.5px;font-weight:700;border-radius:100px;padding:2px 10px;margin-bottom:8px}
+.stl.off{background:var(--red)}
+.kv{display:flex;justify-content:space-between;gap:10px;font-size:15px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv:last-child{border-bottom:0}
+.kv span{color:var(--ink-2)}
+.kv b{font-weight:700}
+
+/* ТАБЫ */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabs .in{display:flex}
+.tab{flex:1;background:none;border:0;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--ink-3);min-width:0}
+.tab[aria-pressed="true"]{color:var(--brand)}
+
+/* ШТОРКИ */
+.sheet{position:fixed;inset:0;z-index:40;background:rgba(14,16,36,.55);display:flex;align-items:flex-end;justify-content:center}
+.sheetin{background:var(--card);width:100%;max-width:560px;border-radius:20px 20px 0 0;
+  padding:18px max(16px,env(safe-area-inset-left,0px)) calc(18px + env(safe-area-inset-bottom,0px));max-height:84vh;overflow-y:auto}
+.sheetin h3{font-size:22px;font-weight:800;margin-bottom:4px}
+.sheetin .sd{font-size:14.5px;color:var(--ink-2);margin-bottom:12px}
+.jrow{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:11px 0;font-size:15.5px;font-weight:700}
+.jrow .jn{width:28px;height:28px;border-radius:8px;background:var(--brand-soft);color:var(--brand);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800}
+.jrow .jd{flex:1;min-width:0}
+.jrow .jd span{display:block;font-size:13px;font-weight:500;color:var(--ink-2)}
+.wa-card{display:flex;gap:12px;align-items:center;background:var(--green-soft);border-radius:14px;padding:13px;margin-bottom:12px}
+.wa-card .wi{width:46px;height:46px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.wa-card b{display:block;font-size:16px}
+.wa-card span{font-size:13.5px;color:var(--ink-2)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(110px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--ink);color:var(--bg);
+  border-radius:12px;padding:11px 16px;font-size:14.5px;font-weight:600;max-width:calc(100% - 32px);text-align:center;box-shadow:var(--sh)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="offer"><div class="in">Бесплатный разбор балла · без регистрации</div></div>
+<div class="top in">
+  <span class="logo">Band<b>Nine</b></span>
+  <button class="wa-pill" id="waTop" type="button">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>WhatsApp</button>
+  <button class="chip-btn" id="jumpBtn" type="button">Экраны</button>
+</div>
+
+<div class="main" id="main">
+
+  <!-- 1 ЛЕНДИНГ -->
+  <section id="s-hero">
+    <div class="in hero">
+      <span class="pill"><i></i>Разбор за 2 минуты · бесплатно</span>
+      <h1>Узнайте свой IELTS-балл <em>до того</em>, как заплатите ₹19 000 за экзамен</h1>
+      <p class="lede">9 вопросов — и вы увидите оценку по каждому модулю, сколько не хватает до цели и план по дням до вашей даты.</p>
+      <button class="cta" id="start" type="button">Узнать мой балл бесплатно
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="ticks">
+        <span><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Без регистрации</span>
+        <span><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Проверка Writing за 24 ч</span>
+        <span><svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Отмена в 1 клик</span>
+      </div>
+    </div>
+
+    <div class="band tint"><div class="in">
+      <div class="stats">
+        <div class="stat hot"><div class="n">₹19 000</div><div class="t">стоит одна попытка IELTS в Индии</div></div>
+        <div class="stat"><div class="n">0.5</div><div class="t">балла часто решают визу или отказ</div></div>
+        <div class="stat"><div class="n">24 ч</div><div class="t">проверка Writing и Speaking преподавателем</div></div>
+        <div class="stat"><div class="n">4</div><div class="t">модуля — оценка по каждому отдельно</div></div>
+      </div>
+    </div></div>
+
+    <div class="band"><div class="in">
+      <h2 class="sec-h">Истории учеников</h2>
+      <div class="sample-banner"><b>ОБРАЗЦЫ</b><span>Так будет выглядеть блок. До запуска заменить реальными отзывами с письменного согласия учеников.</span></div>
+      <div class="revs" id="revs"></div>
+    </div></div>
+
+    <div class="band sun"><div class="in">
+      <h2 class="sec-h">Какой балл вам нужен?</h2>
+      <p class="sec-s">Нажмите — покажем, что он открывает.</p>
+      <div class="bandpick" id="bands"></div>
+      <p class="unl" id="unlocks"></p>
+    </div></div>
+
+    <div class="band"><div class="in">
+      <h2 class="sec-h">Куда едут с IELTS</h2>
+      <p class="sec-s">Типичный порог — точное требование смотрите у своей программы.</p>
+      <div class="countries" id="countries"></div>
+    </div></div>
+
+    <div class="band tint"><div class="in">
+      <h2 class="sec-h">Как это работает</h2>
+      <p class="sec-s">Три шага от «не знаю свой уровень» до готовности к дате.</p>
+      <div class="steps">
+        <div class="st"><span class="sn">1</span><div><b>Разбор за 2 минуты<span class="free">бесплатно</span></b><p>Оценка по модулям, разрыв до цели, дневная нагрузка.</p></div></div>
+        <div class="st"><span class="sn">2</span><div><b>Mock-тест и проверка</b><p>Writing и Speaking проверяет преподаватель, разбор по band descriptors за сутки.</p></div></div>
+        <div class="st"><span class="sn">3</span><div><b>Занятия до даты экзамена</b><p>15–60 минут в день, упор на ваш слабый модуль, повторный mock за 10 дней до теста.</p></div></div>
+      </div>
+    </div></div>
+
+    <div class="band"><div class="in">
+      <h2 class="sec-h">Посчитайте сами</h2>
+      <p class="sec-s">Сколько стоит не дотянуть полбалла.</p>
+      <div class="vs">
+        <div class="vsc bad"><div class="vl">Пересдача IELTS</div><div class="vp">₹19 000</div><div class="vn">и ещё 4–6 недель ожидания новой даты</div></div>
+        <div class="vsc good"><div class="vl">Подготовка до экзамена</div><div class="vp">₹2 499</div><div class="vn">три месяца, один платёж, без автопродления</div></div>
+      </div>
+    </div></div>
+
+    <div class="band tint"><div class="in faq">
+      <h2 class="sec-h" style="margin-bottom:12px">Частые вопросы</h2>
+      <details><summary>Это заменяет репетитора?</summary><p>Для большинства — да. Структура, задания и проверка Writing и Speaking по тем же критериям, что на экзамене. Если нужен разговорный партнёр каждый день — он есть в программе.</p></details>
+      <details><summary>До экзамена три недели. Успею?</summary><p>Зависит от разрыва. Разбор покажет честно: если за ваш срок цель не закрывается, мы скажем, на сколько перенести дату.</p></details>
+      <details><summary>Как работает проверка Writing?</summary><p>Вы пишете текст в приложении, преподаватель проверяет по четырём критериям band descriptors и правит прямо в тексте. Ответ — в течение суток.</p></details>
+      <details><summary>Можно вернуть деньги?</summary><p>Да, в течение 14 дней, если вы не начали заниматься.</p></details>
+      <details><summary>Будет автопродление?</summary><p>Курс за ₹2 499 — разовый платёж, ничего больше не спишется. Помесячный тариф продлевается, но банк предупреждает за 24 часа до каждого списания, а отмена — одна кнопка в профиле.</p></details>
+    </div></div>
+  </section>
+
+  <!-- 2 КВИЗ -->
+  <section id="s-quiz" hidden><div class="in">
+    <div class="ptop">
+      <div class="ptrack"><i id="pbar" style="width:0%"></i></div>
+      <span class="pnum" id="pstep">1/9</span>
+    </div>
+    <h2 class="q" id="qtitle"></h2>
+    <p class="qsub" id="qsub"></p>
+    <div class="qhint" id="qhint" hidden></div>
+    <div class="opts" id="qopts"></div>
+    <button class="back" id="qback" type="button" hidden>← Назад</button>
+  </div></section>
+
+  <!-- 3 РАСЧЁТ -->
+  <section id="s-calc" hidden><div class="in calc">
+    <h2 class="q" style="margin-bottom:14px">Готовим ваш разбор…</h2>
+    <div class="crow" id="c0"><span class="cd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Раскладываем ответы по 4 модулям</div>
+    <div class="crow" id="c1"><span class="cd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Считаем overall и разрыв до цели</div>
+    <div class="crow" id="c2"><span class="cd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Раскладываем недели до экзамена</div>
+    <div class="crow" id="c3"><span class="cd"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Подбираем нагрузку под слабый модуль</div>
+  </div></section>
+
+  <!-- 4 РЕЗУЛЬТАТ -->
+  <section id="s-result" hidden><div class="in">
+    <div class="rhead">
+      <div class="rl">Ваш разбор готов</div>
+      <h2 id="rtitle"></h2>
+      <div class="scores">
+        <div class="sc"><div class="sv" id="sNow">—</div><div class="sl">сейчас</div></div>
+        <svg class="arr" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0l-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="sc goal"><div class="sv" id="sGoal">—</div><div class="sl">цель</div></div>
+      </div>
+    </div>
+
+    <div class="mods" id="mods"></div>
+    <div class="verdict" id="verdict"><b id="vtitle"></b><p id="vtext"></p></div>
+
+    <dl class="metrics">
+      <div><dt>Разрыв</dt><dd id="mGap">—</dd></div>
+      <div><dt>Недель</dt><dd id="mWeeks">—</dd></div>
+      <div><dt>В день</dt><dd id="mDaily">—</dd></div>
+      <div><dt>Прогноз</dt><dd id="mProj">—</dd></div>
+    </dl>
+
+    <h3 class="h3">Как вырастет балл</h3>
+    <div class="chartcard"><svg id="chart" viewBox="0 0 500 200" width="100%" style="max-width:100%;display:block" role="img" aria-label="Прогноз роста overall band score по неделям"></svg></div>
+
+    <h3 class="h3" id="planTitle">Ваш план</h3>
+    <ul class="plan" id="planList"></ul>
+    <p class="fine" style="margin-bottom:14px">Оценка по ответам, а не по тесту. Точный балл покажет mock-тест в первую неделю программы.</p>
+    <button class="cta" id="toPay" type="button">Открыть мой план</button>
+  </div></section>
+
+  <!-- 5 ПЕЙВОЛЛ -->
+  <section id="s-pay" hidden><div class="in">
+    <h2 class="q" style="margin:18px 0 6px">Ваш план готов</h2>
+    <p class="qsub" id="paysub" style="margin-bottom:12px"></p>
+    <div class="urg"><span class="un" id="urgN">7</span><span id="urgT">недель до экзамена — чем раньше старт, тем меньше нагрузка в день</span></div>
+
+    <button class="price" id="p2" type="button" aria-pressed="true">
+      <span class="ribbon">Выгоднее</span>
+      <span class="row">
+        <span class="rd"></span>
+        <span class="mid"><span class="nm">Весь курс сразу</span><span class="sub">3 месяца · без автопродления</span></span>
+        <span class="pr"><span class="old">₹3 896</span><br><span class="am">₹2 499</span><br><span class="save">экономия ₹1 397</span></span>
+      </span>
+    </button>
+
+    <button class="price" id="p1" type="button" aria-pressed="false">
+      <span class="row">
+        <span class="rd"></span>
+        <span class="mid"><span class="nm">По месяцам</span><span class="sub">₹299 первая неделя, затем ₹1 199/мес</span></span>
+        <span class="pr"><span class="am">₹299</span></span>
+      </span>
+    </button>
+    <p class="fine" style="margin:-2px 0 4px">Зачёркнутая цена — столько выйдет за те же 3 месяца при помесячной оплате.</p>
+
+    <div class="terms"><b>Что спишется и когда</b><ul id="termsList"></ul></div>
+    <div class="guar"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Возврат в течение 14 дней, если не начали заниматься</div>
+
+    <button class="cta" id="toCheckout" type="button">Перейти к оплате</button>
+    <p class="helpline">Есть вопросы? <button id="waPay" type="button">Напишите в WhatsApp</button></p>
+    <button class="ghost" id="restart" type="button" style="margin-top:14px">Пройти разбор заново</button>
+  </div></section>
+
+  <!-- 6 ЧЕКАУТ -->
+  <section id="s-checkout" hidden><div class="in">
+    <div class="bkhead">
+      <button id="payBack" type="button" aria-label="Назад"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span>Оплата</span>
+    </div>
+    <div class="order">
+      <div class="orow"><span id="coPlan">—</span><b id="coAmt">—</b></div>
+      <div class="orow"><span>GST 18%</span><b id="coGst">—</b></div>
+      <div class="orow total"><span>К оплате сегодня</span><span id="coTotal">—</span></div>
+    </div>
+    <div class="pmtabs">
+      <button class="pmtab" id="pm-upi" type="button" aria-pressed="true">UPI</button>
+      <button class="pmtab" id="pm-card" type="button" aria-pressed="false">Карта</button>
+      <button class="pmtab" id="pm-nb" type="button" aria-pressed="false">Net Banking</button>
+    </div>
+    <div class="pmbody" id="pmBody"></div>
+    <div class="mandate" id="mandateBox" hidden>
+      <b>Согласие на регулярные списания</b>
+      <p>Вы регистрируете e-mandate по правилам RBI. Банк пришлёт уведомление за 24 часа до каждого списания — можно отказаться от платежа или отменить мандат в любой момент.</p>
+    </div>
+    <div class="integr">
+      <b>Точка интеграции</b>
+      <p>Здесь вызывается SDK агрегатора: <code>createOrder()</code> → виджет → вебхук. Для подписки — <code>createSubscription()</code> с e-mandate. Это демо: платёж не проводится, введённые данные никуда не отправляются, кнопка просто открывает кабинет.</p>
+    </div>
+    <button class="cta" id="payNow" type="button">Оплатить</button>
+    <div class="secure"><span>🔒 Защищённый платёж</span><span>UPI · RuPay · Visa · Mastercard</span></div>
+    <p class="helpline">Не проходит оплата? <button id="waCo" type="button">Помощь в WhatsApp</button></p>
+  </div></section>
+
+  <!-- 7 УСПЕХ -->
+  <section id="s-ok" hidden><div class="in">
+    <div class="okwrap">
+      <div class="okc"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2 class="q">Оплата прошла!</h2>
+      <p class="fine" id="okText" style="max-width:38ch;margin:6px auto 0"></p>
+    </div>
+    <button class="cta brand" id="toApp" type="button">Начать подготовку</button>
+  </div></section>
+
+  <!-- 8 ПРИЛОЖЕНИЕ -->
+  <section id="s-app" hidden>
+    <div class="apphead"><div class="in">
+      <div class="hl"><h2 id="appTitle">Сегодня</h2><p class="sub" id="appSub"></p></div>
+      <div class="ring">
+        <svg width="62" height="62" viewBox="0 0 62 62" aria-hidden="true">
+          <circle cx="31" cy="31" r="26" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/>
+          <circle id="ringArc" cx="31" cy="31" r="26" fill="none" stroke="var(--yellow)" stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4"/>
+        </svg>
+        <div class="rv" id="ringVal">0%</div>
+      </div>
+    </div></div>
+    <div class="in" id="appBody"></div>
+  </section>
+
+  <!-- 9 УРОК -->
+  <section id="s-lesson" hidden><div class="in">
+    <div class="bkhead">
+      <button id="lesBack" type="button" aria-label="Назад"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span id="lesCrumb">Неделя 1</span>
+    </div>
+    <div class="article" id="lesBody"></div>
+    <button class="cta brand" id="lesDone" type="button" style="margin-top:8px">Отметить пройденным</button>
+  </div></section>
+
+</div>
+
+<div class="sticky" id="sticky">
+  <div class="in">
+    <button class="cta" id="start2" type="button">Узнать мой балл</button>
+    <button class="wa-round" id="waSticky" type="button" aria-label="Написать в WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs" hidden><div class="in">
+  <button class="tab" id="t-today" type="button" aria-pressed="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Сегодня</button>
+  <button class="tab" id="t-prog" type="button" aria-pressed="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5.5h14M5 12h14M5 18.5h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Программа</button>
+  <button class="tab" id="t-prof" type="button" aria-pressed="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="9" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M5.5 19.5c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Профиль</button>
+</div></nav>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheetin">
+    <h3>Перейти к экрану</h3>
+    <p class="sd">Для быстрого осмотра — квиз заполнится типовыми ответами.</p>
+    <div id="jumpList"></div>
+    <button class="ghost" id="sheetClose" type="button" style="margin-top:12px">Закрыть</button>
+  </div>
+</div>
+
+<div class="sheet" id="waSheet" hidden>
+  <div class="sheetin">
+    <div class="wa-card">
+      <span class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+      <div><b>Поддержка в WhatsApp</b><span>Ответим про подготовку и оплату на английском и хинди</span></div>
+    </div>
+    <p class="sd">В демо номер не подключён. При запуске эта кнопка откроет чат с поддержкой.</p>
+    <button class="cta" id="waOpen" type="button" style="background:var(--wa);box-shadow:none">Открыть чат</button>
+    <button class="ghost" id="waClose" type="button" style="margin-top:10px">Закрыть</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var CHECK = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function track(ev, data){
+    window.dataLayer = window.dataLayer || [];
+    var o = {event:ev};
+    if(data){ for(var k in data){ if(Object.prototype.hasOwnProperty.call(data,k)) o[k]=data[k]; } }
+    window.dataLayer.push(o);
+    if(window.console && console.log) console.log("[track]", ev, data || "");
+  }
+  var toastT = null;
+  function toast(msg){
+    var t = $("toast"); t.textContent = msg; t.hidden = false;
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.hidden = true; }, 2600);
+  }
+
+  var MONTHS = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+  function fmt(d){ return d.getDate() + " " + MONTHS[d.getMonth()]; }
+  function plusDays(n){ var d = new Date(); d.setDate(d.getDate()+n); return d; }
+  function inr(n){ return "₹" + n.toLocaleString("ru-RU"); }
+
+  /* ---------- данные лендинга ---------- */
+  var BANDS = [
+    {v:"6",  l:"6.0", t:"база",    d:"<b>6.0</b> — порог многих бакалавриатов и рабочих виз. Ниже большинство программ документы не принимает."},
+    {v:"6.5",l:"6.5", t:"магистр", d:"<b>6.5</b> — самый частый запрос магистратур и британских университетов, обычно не ниже 6.0 в каждом модуле."},
+    {v:"7",  l:"7.0", t:"ПМЖ",     d:"<b>7.0</b> — с этого уровня заявка на ПМЖ в Канаде и Австралии становится конкурентной."},
+    {v:"7.5",l:"7.5", t:"конкурс", d:"<b>7.5</b> — конкурсные специальности, стипендии, часть лицензируемых профессий."},
+    {v:"8",  l:"8.0", t:"макс",    d:"<b>8.0</b> — нужно немногим; имеет смысл, если за балл дают очки в иммиграционной системе."}
+  ];
+  var COUNTRIES = [
+    {cc:"CA", c:"#D52B1E", n:"Канада",          g:"ПМЖ, Express Entry", s:"7.0"},
+    {cc:"UK", c:"#012169", n:"Британия",        g:"Магистратура",       s:"6.5"},
+    {cc:"AU", c:"#00843D", n:"Австралия",       g:"Skilled Migration",  s:"7.0"},
+    {cc:"NZ", c:"#00247D", n:"Новая Зеландия",  g:"Skilled Migrant",    s:"6.5"},
+    {cc:"IE", c:"#169B62", n:"Ирландия",        g:"Учёба и работа",     s:"6.5"},
+    {cc:"DE", c:"#3A3A3A", n:"Германия",        g:"Программы на англ.", s:"6.0"}
+  ];
+  var REVIEWS = [
+    {i:"А", c:"#3B2BD6", n:"Анкит, 24", w:"Пуна → Торонто", f:"6.0", t:"7.0", q:"Трижды получал 6.5 по Writing. Здесь впервые объяснили, что я отвечаю не на тот вопрос в Task 2. За шесть недель дотянул до 7.0."},
+    {i:"П", c:"#FF7A00", n:"Прия, 27",  w:"Хайдарабад → Мельбурн", f:"6.5", t:"7.5", q:"Speaking пугал больше всего. Схема «прошлое — настоящее — будущее» звучит просто, но на экзамене я ни разу не замолчала."},
+    {i:"Р", c:"#0E9F57", n:"Рахул, 22", w:"Лудхиана → Лондон", f:"5.5", t:"6.5", q:"Занимался после смены по 20 минут. План не требовал невозможного, и я его не бросил."},
+    {i:"С", c:"#D6336C", n:"Снеха, 25", w:"Кочи → Дублин", f:"6.0", t:"7.0", q:"True/False/Not Given стоил мне баллов в Reading. Одно правило — и ошибок почти нет."}
+  ];
+
+  /* ---------- квиз ---------- */
+  var QS = [
+    {k:"goal", t:"Зачем вам IELTS?", s:"От цели зависит проходной балл.",
+     o:[["study","Учёба за рубежом","Бакалавриат, магистратура, PhD"],["work","Рабочая виза","Оффер или поиск работы"],
+        ["pr","ПМЖ","Express Entry, Skilled Migration"],["citizen","Гражданство или воссоединение семьи",""]]},
+    {k:"dest", t:"Куда планируете?", s:"У каждой страны свой порог.",
+     o:[["ca","Канада",""],["uk","Великобритания",""],["au","Австралия или Новая Зеландия",""],["eu","Европа",""],["none","Ещё решаю",""]]},
+    {k:"target", t:"Какой балл нужен?", s:"Overall band score.",
+     o:[["6","6.0",""],["6.5","6.5",""],["7","7.0",""],["7.5","7.5 и выше",""],["idk","Не знаю требований","Посчитаем по стране и цели"]]},
+    {k:"prior", t:"Сдавали раньше?", s:"",
+     o:[["no","Нет, буду впервые",""],["low","Да, меньше 6.0",""],["mid","Да, 6.0–6.5",""],["high","Да, 7.0 и выше",""]]},
+    {k:"when", t:"Когда экзамен?", s:"Срок определяет всю нагрузку.",
+     o:[["m1","Меньше чем через месяц","Запись уже есть"],["m2","Через 1–2 месяца",""],["m4","Через 3–4 месяца",""],["open","Ещё не записывался","Посчитаем от 12 недель"]]},
+    {k:"weak", t:"Что даётся хуже всего?", s:"Обычно именно это тянет overall вниз.",
+     o:[["speaking","Speaking","Разговорная часть"],["writing","Writing","Task 1 и Task 2"],["listening","Listening",""],["reading","Reading",""]]},
+    {k:"level", t:"Какой у вас английский сейчас?", s:"",
+     o:[["zero","Почти с нуля","Понимаю отдельные фразы"],["passive","Читаю и понимаю, но говорю с трудом",""],
+        ["written","Пишу неплохо, боюсь говорить",""],["fluent","Общаюсь свободно, но формат экзамена не знаю",""]]},
+    {k:"block", t:"Что мешает больше всего?", s:"",
+     o:[["nopartner","Не с кем говорить по-английски",""],["nofeedback","Никто не проверяет мои тексты",""],
+        ["notime","Не хватает времени",""],["timer","Теряюсь, когда идёт таймер",""]]},
+    {k:"daily", t:"Сколько минут в день реально сможете?", s:"Отвечайте честно — от этого весь прогноз.",
+     o:[["15","15 минут",""],["30","30 минут",""],["60","Час",""],["90","Полтора часа и больше",""]]}
+  ];
+  var HINTS = {4:"Почти половина — ещё 5 вопросов", 6:"Осталось 3 вопроса", 8:"Последний вопрос"};
+
+  var A = {}, idx = 0;
+  var plan = "p2", method = "upi", tab = "today";
+  var done = {}, openWeek = 1, curLesson = null, cancelled = false, paidOn = null;
+
+  var SCREENS = ["s-hero","s-quiz","s-calc","s-result","s-pay","s-checkout","s-ok","s-app","s-lesson"];
+  function show(id){
+    SCREENS.forEach(function(s){ $(s).hidden = (s !== id); });
+    var hero = id === "s-hero", app = id === "s-app";
+    $("sticky").hidden = !hero;
+    $("tabs").hidden = !app;
+    $("main").classList.toggle("hasbar", hero);
+    $("main").classList.toggle("hastabs", app);
+    window.scrollTo(0,0);
+  }
+
+  function renderBands(){
+    var box = $("bands"); box.textContent = "";
+    BANDS.forEach(function(b){
+      var el = document.createElement("button");
+      el.className = "bp"; el.type = "button";
+      el.setAttribute("aria-pressed", A.target === b.v ? "true" : "false");
+      el.innerHTML = '<span class="v">' + b.l + '</span><span class="l">' + b.t + '</span>';
+      el.addEventListener("click", function(){
+        A.target = b.v; $("unlocks").innerHTML = b.d; renderBands();
+        $("start").firstChild.nodeValue = "Хватает ли мне на " + b.l + "? ";
+        track("target_select", {target:b.v});
+      });
+      box.appendChild(el);
+    });
+  }
+  function renderCountries(){
+    var box = $("countries"); box.textContent = "";
+    COUNTRIES.forEach(function(c){
+      var el = document.createElement("div"); el.className = "ctry";
+      el.innerHTML = '<span class="cc" style="background:' + c.c + '">' + c.cc + '</span>' +
+        '<span class="cd"><b>' + c.n + '</b><span>' + c.g + '</span></span><span class="cs">' + c.s + '</span>';
+      box.appendChild(el);
+    });
+  }
+  function renderReviews(){
+    var box = $("revs"); box.textContent = "";
+    REVIEWS.forEach(function(r){
+      var el = document.createElement("div"); el.className = "rev";
+      el.innerHTML = '<div class="rh"><span class="av" style="background:' + r.c + '">' + r.i + '</span>' +
+        '<span class="who"><b>' + r.n + '</b><span>' + r.w + '</span></span><span class="smp">образец</span></div>' +
+        '<div class="jump"><span class="from">' + r.f + '</span>' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0l-5.5-5.5M19 12l-5.5 5.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+        '<span class="to">' + r.t + '</span></div><q>' + r.q + '</q>';
+      box.appendChild(el);
+    });
+  }
+
+  function render(){
+    var q = QS[idx];
+    $("pbar").style.width = ((idx) / QS.length * 100) + "%";
+    $("pstep").textContent = (idx+1) + "/" + QS.length;
+    $("qtitle").textContent = q.t;
+    $("qsub").textContent = q.s; $("qsub").hidden = !q.s;
+    var h = HINTS[idx]; $("qhint").hidden = !h; if(h) $("qhint").textContent = h;
+    $("qback").hidden = idx === 0;
+    var box = $("qopts"); box.textContent = "";
+    q.o.forEach(function(o){
+      var b = document.createElement("button");
+      b.className = "opt"; b.type = "button";
+      b.setAttribute("aria-pressed", A[q.k] === o[0] ? "true" : "false");
+      var r = document.createElement("span"); r.className = "rd";
+      var t = document.createElement("span"); t.className = "t";
+      var bb = document.createElement("b"); bb.textContent = o[1]; t.appendChild(bb);
+      if(o[2]){ var sp = document.createElement("span"); sp.textContent = o[2]; t.appendChild(sp); }
+      b.appendChild(r); b.appendChild(t);
+      b.addEventListener("click", function(){
+        A[q.k] = o[0];
+        track("quiz_step", {step:idx+1, key:q.k, value:o[0]});
+        if(idx < QS.length - 1){ idx++; render(); } else { track("quiz_complete"); calc(); }
+      });
+      box.appendChild(b);
+    });
+  }
+
+  /* ---------- модель ---------- */
+  var ORDER = ["listening","reading","writing","speaking"];
+  var MODNAME = {listening:"Listening", reading:"Reading", writing:"Writing", speaking:"Speaking"};
+  function baseline(){
+    if(A.prior === "high") return 7.0;
+    if(A.prior === "mid")  return 6.25;
+    if(A.prior === "low")  return 5.5;
+    return {zero:4.0, passive:5.0, written:5.5, fluent:6.5}[A.level] || 5.0;
+  }
+  function half(x){ return Math.round(x*2)/2; }
+  function clampBand(x){ return Math.max(4, Math.min(9, x)); }
+  function modules(){
+    var base = baseline(), weak = A.weak || "writing", m = {};
+    ORDER.forEach(function(k){ m[k] = base + 0.25; });
+    m[weak] = base - 0.75;
+    var tilt = {zero:0, passive:0.35, written:0.15, fluent:-0.15}[A.level] || 0;
+    m.listening += tilt; m.reading += tilt; m.writing -= tilt; m.speaking -= tilt;
+    if(A.level === "written"){ m.writing += 0.3; m.speaking -= 0.3; }
+    var out = {}; ORDER.forEach(function(k){ out[k] = half(clampBand(m[k])); });
+    return out;
+  }
+  function overall(){ var m = modules(), s = 0; ORDER.forEach(function(k){ s += m[k]; }); return half(s/4); }
+  function target(){
+    if(A.target && A.target !== "idk") return parseFloat(A.target);
+    if(A.dest === "ca" || A.dest === "au") return A.goal === "pr" ? 7.0 : 6.5;
+    return 6.5;
+  }
+  function weeks(){ return {m1:3, m2:7, m4:14, open:12}[A.when] || 12; }
+  function perWeek(m){ return {15:0.06, 30:0.10, 60:0.16, 90:0.20}[m] || 0.10; }
+  function project(start, w, m){ var b = start, g = perWeek(m); for(var i=0;i<w;i++){ b += g * Math.max(0.25, (8.6 - b) / 3.2); } return Math.min(9, b); }
+  function minutesNeeded(start, w, goal){ var o=[15,30,60,90]; for(var i=0;i<o.length;i++){ if(project(start,w,o[i]) >= goal-0.001) return o[i]; } return null; }
+  function f1(x){ return x.toFixed(1); }
+  function pos(b){ return Math.max(0, Math.min(100, (b-4)/5*100)); }
+
+  function calc(){
+    $("pbar").style.width = "100%";
+    show("s-calc");
+    ["c0","c1","c2","c3"].forEach(function(id){ $(id).classList.remove("on"); });
+    var d = 0;
+    ["c0","c1","c2","c3"].forEach(function(id){ d += 420; setTimeout(function(){ $(id).classList.add("on"); }, d); });
+    setTimeout(result, d + 550);
+  }
+
+  function result(){
+    var m = modules(), ov = overall(), goal = target(), w = weeks();
+    var daily = parseInt(A.daily, 10), proj = project(ov, w, daily);
+    var gap = goal - ov, need = minutesNeeded(ov, w, goal), weak = A.weak || "writing";
+
+    $("rtitle").textContent = gap > 0 ? "До " + f1(goal) + " не хватает " + f1(gap) : "Вы уже на уровне " + f1(goal) + "!";
+    $("sNow").textContent = f1(ov); $("sGoal").textContent = f1(goal);
+
+    var mods = $("mods"); mods.textContent = "";
+    ORDER.forEach(function(k){
+      var el = document.createElement("div");
+      el.className = "mod" + (k === weak ? " weak" : "");
+      el.innerHTML = '<span class="mn">' + MODNAME[k] + (k === weak ? '<span class="wk">слабый</span>' : '') + '</span>' +
+        '<span class="mb"><i style="width:' + pos(m[k]) + '%"></i></span><span class="mv">' + f1(m[k]) + '</span>';
+      mods.appendChild(el);
+    });
+
+    var v = $("verdict");
+    if(proj >= goal - 0.001){
+      v.classList.remove("warn");
+      $("vtitle").textContent = "Вы успеваете к дате";
+      $("vtext").textContent = "При " + daily + " мин в день за " + w + " нед. выходите на " + f1(half(proj)) + ". Главное — регулярность: пропущенная неделя съедает около 0.1 балла.";
+    } else {
+      v.classList.add("warn");
+      $("vtitle").textContent = "С таким темпом не успеваете";
+      $("vtext").textContent = need
+        ? "С " + daily + " мин в день прогноз — " + f1(half(proj)) + ". Чтобы взять " + f1(goal) + " за " + w + " нед., нужно " + need + " мин в день."
+        : "За " + w + " нед. разрыв не закрывается. Реалистично — перенести дату и готовиться около " + Math.ceil(w*2.2) + " нед.";
+    }
+    $("mGap").textContent = (gap > 0 ? "+" : "") + f1(gap);
+    $("mWeeks").textContent = w;
+    $("mDaily").textContent = (need || daily) + "м";
+    $("mProj").textContent = f1(half(proj));
+
+    drawChart(ov, goal, w, daily);
+    buildPlanList();
+    track("result_view", {overall:ov, goal:goal, weeks:w, weak:weak, projected:half(proj)});
+    show("s-result");
+  }
+
+  function drawChart(start, goal, w, daily){
+    var W = 500, H = 200, L = 34, R = 16, T = 20, B = 28;
+    var top = Math.max(goal, project(start,w,daily)), yMin = Math.min(start, goal) - 0.6, yMax = top + 0.5;
+    var x = function(i){ return L + (W-L-R) * (i/w); };
+    var y = function(b){ return T + (H-T-B) * (1 - (b-yMin)/(yMax-yMin)); };
+    var g = "", i;
+    for(i = Math.ceil(yMin*2)/2; i <= yMax; i += 0.5){
+      g += '<line x1="'+L+'" y1="'+y(i).toFixed(1)+'" x2="'+(W-R)+'" y2="'+y(i).toFixed(1)+'" stroke="var(--line)" stroke-width="1"/>' +
+           '<text x="'+(L-7)+'" y="'+(y(i)+4).toFixed(1)+'" text-anchor="end" fill="var(--ink-3)" font-size="11" font-weight="600" font-family="Hind, sans-serif">'+i.toFixed(1)+'</text>';
+    }
+    g += '<line x1="'+L+'" y1="'+y(goal).toFixed(1)+'" x2="'+(W-R)+'" y2="'+y(goal).toFixed(1)+'" stroke="var(--saffron)" stroke-width="2.5" stroke-dasharray="6 5"/>' +
+         '<text x="'+(W-R)+'" y="'+(y(goal)-8).toFixed(1)+'" text-anchor="end" fill="var(--saffron)" font-size="13" font-weight="700" font-family="Hind, sans-serif">цель '+goal.toFixed(1)+'</text>';
+    var pts = [], b = start; pts.push([x(0), y(b)]);
+    for(i = 1; i <= w; i++){ b = Math.min(9, b + perWeek(daily) * Math.max(0.25, (8.6-b)/3.2)); pts.push([x(i), y(b)]); }
+    var d = pts.map(function(p,k){ return (k?"L":"M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(" ");
+    g += '<path d="'+d+' L'+x(w).toFixed(1)+' '+(H-B)+' L'+x(0).toFixed(1)+' '+(H-B)+' Z" fill="var(--brand-soft)"/>';
+    g += '<path d="'+d+'" fill="none" stroke="var(--brand)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>';
+    g += '<circle cx="'+x(w).toFixed(1)+'" cy="'+pts[w][1].toFixed(1)+'" r="7" fill="var(--brand)" stroke="var(--card)" stroke-width="3"/>';
+    g += '<text x="'+(x(w)-10).toFixed(1)+'" y="'+(pts[w][1]-13).toFixed(1)+'" text-anchor="end" fill="var(--brand)" font-size="16" font-weight="800" font-family="Baloo 2, sans-serif">'+f1(half(b))+'</text>';
+    g += '<text x="'+L+'" y="'+(H-8)+'" fill="var(--ink-3)" font-size="11.5" font-weight="600" font-family="Hind, sans-serif">сегодня</text>';
+    g += '<text x="'+(W-R)+'" y="'+(H-8)+'" text-anchor="end" fill="var(--ink-3)" font-size="11.5" font-weight="600" font-family="Hind, sans-serif">через '+w+' нед.</text>';
+    $("chart").innerHTML = g;
+  }
+
+  function buildPlanList(){
+    var byWeak = {
+      speaking:["Part 2 cue card каждый день: минута подготовки, две на ответ, запись голоса","Разбор записи по четырём критериям Speaking","40 тем Part 3 со связками, чтобы ответ не обрывался"],
+      writing:["Task 2 дважды в неделю с проверкой и правкой прямо в тексте","Task 1 Academic: шаблоны под графики, процессы и карты","Разбор потерь на Coherence — связки, абзацы, позиция"],
+      listening:["Section 3 и 4 каждый день — там теряется больше всего","Тренировка на акценты: британский, австралийский, индийский","Ловушки на числах, написании слов и переносе ответов"],
+      reading:["True/False/Not Given и Matching Headings — самые затратные задания","Скимминг на время: 20 минут на пассаж","Академическая лексика из реальных пассажей"]
+    };
+    var byBlock = {nopartner:"Ежедневный разговорный слот с партнёром вашего уровня", nofeedback:"Проверка ваших текстов преподавателем за сутки",
+      notime:"Блоки по 10 минут, которые складываются в дневную норму", timer:"Тренировки строго по таймеру экзамена"};
+    var items = (byWeak[A.weak] || byWeak.writing).slice(0,3);
+    items.push(byBlock[A.block] || byBlock.nofeedback);
+    items.push("Mock-тест в первую неделю и повторный за 10 дней до экзамена");
+    $("planTitle").textContent = "Ваш план: упор на " + (MODNAME[A.weak] || "Writing");
+    var ul = $("planList"); ul.textContent = "";
+    items.forEach(function(t){
+      var li = document.createElement("li");
+      li.innerHTML = CHECK; var s = document.createElement("span"); s.textContent = t; li.appendChild(s);
+      ul.appendChild(li);
+    });
+  }
+
+  /* ---------- пейволл ---------- */
+  function payTerms(){
+    var ul = $("termsList"); ul.textContent = "";
+    var lines = plan === "p1"
+      ? ["Сегодня — ₹299 за первую неделю","Далее ₹1 199 с " + fmt(plusDays(7)) + ", каждые 30 дней","Банк предупредит за 24 часа до списания","Отмена одной кнопкой в профиле"]
+      : ["Сегодня — ₹2 499 один раз","Автопродления нет, больше ничего не спишется","Доступ на 3 месяца, до " + fmt(plusDays(90))];
+    lines.forEach(function(t){ var li = document.createElement("li"); li.innerHTML = CHECK; var s = document.createElement("span"); s.textContent = t; li.appendChild(s); ul.appendChild(li); });
+  }
+  function pickPlan(p){
+    plan = p;
+    $("p1").setAttribute("aria-pressed", p === "p1" ? "true" : "false");
+    $("p2").setAttribute("aria-pressed", p === "p2" ? "true" : "false");
+    payTerms();
+    track("plan_select", {plan: p === "p1" ? "monthly" : "onetime"});
+  }
+  function weeksWord(n){ var a = n % 10, b = n % 100; if(a===1 && b!==11) return "неделя"; if(a>=2 && a<=4 && (b<12||b>14)) return "недели"; return "недель"; }
+  function openPay(){
+    var w = weeks();
+    $("paysub").textContent = "Цель " + f1(target()) + " · упор на " + (MODNAME[A.weak] || "Writing");
+    $("urgN").textContent = w;
+    $("urgT").textContent = weeksWord(w) + " до экзамена — чем раньше старт, тем меньше нагрузка в день";
+    payTerms();
+    track("paywall_view");
+    show("s-pay");
+  }
+
+  /* ---------- чекаут ---------- */
+  var PM = {
+    upi:function(){ return '<div class="field"><label for="f-upi">UPI ID</label><input id="f-upi" type="text" inputmode="email" placeholder="name@okhdfcbank" autocomplete="off"></div><p class="fine">Запрос придёт в ваше UPI-приложение — GPay, PhonePe, Paytm.</p>'; },
+    card:function(){ return '<div class="field"><label for="f-num">Номер карты</label><input id="f-num" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="off"></div>' +
+      '<div class="frow"><div class="field"><label for="f-exp">Срок</label><input id="f-exp" type="text" inputmode="numeric" placeholder="ММ/ГГ" autocomplete="off"></div>' +
+      '<div class="field"><label for="f-cvv">CVV</label><input id="f-cvv" type="text" inputmode="numeric" placeholder="···" autocomplete="off"></div></div>'; },
+    nb:function(){ return '<div class="field"><label for="f-bank">Банк</label><input id="f-bank" type="text" placeholder="HDFC, ICICI, SBI, Axis" autocomplete="off"></div><p class="fine">Перенаправим в интернет-банк для подтверждения.</p>'; }
+  };
+  function pickMethod(m){
+    method = m;
+    ["upi","card","nb"].forEach(function(k){ $("pm-"+k).setAttribute("aria-pressed", k === m ? "true" : "false"); });
+    $("pmBody").innerHTML = PM[m]();
+    track("checkout_method", {method:m});
+  }
+  function openCheckout(){
+    var base = plan === "p1" ? 299 : 2499, gst = Math.round(base*0.18);
+    $("coPlan").textContent = plan === "p1" ? "Первая неделя" : "Курс до экзамена, 3 мес.";
+    $("coAmt").textContent = inr(base); $("coGst").textContent = inr(gst); $("coTotal").textContent = inr(base+gst);
+    $("mandateBox").hidden = plan !== "p1";
+    $("payNow").textContent = "Оплатить " + inr(base+gst);
+    pickMethod(method);
+    track("checkout_start", {plan: plan === "p1" ? "monthly" : "onetime", amount: base+gst});
+    show("s-checkout");
+  }
+
+  /* ---------- уроки ---------- */
+  var LESSONS = {
+    mock:{min:60, title:"Диагностический mock-тест", body:function(){ return "<h2>Диагностический mock-тест</h2>" +
+      "<p>Прежде чем что-то учить, нужно понять, где вы на самом деле. Оценка из разбора — ориентир по вашим ощущениям, а они врут в обе стороны: люди с хорошим чтением переоценивают себя, люди с акцентом — недооценивают.</p>" +
+      "<h4>Как проходить</h4><ol><li>Все четыре модуля в один день, перерывы не больше десяти минут.</li><li>Listening, Reading и Writing подряд — 2 часа 40 минут. Speaking после.</li><li>Телефон в другой комнате. Ни словаря, ни переводчика.</li><li>Writing — в поле без проверки орфографии.</li></ol>" +
+      "<div class='box warnbox'><b>Главная ошибка</b><p>Остановиться на середине. Незаконченный тест не даёт оценки — доведите до конца даже с плохим результатом.</p></div>" +
+      "<h4>Что дальше</h4><p>Listening и Reading проверятся автоматически. Writing и Speaking — у преподавателя: разбор по четырём критериям придёт за сутки, и программа перестроится под реальные цифры.</p>"; }},
+    descriptors:{min:20, title:"За что реально снимают баллы", body:function(){ return "<h2>За что реально снимают баллы</h2>" +
+      "<p>Каждый модуль оценивается по четырём отдельным критериям, и балл за модуль — их среднее. Понимание этой механики часто даёт полбалла само по себе.</p>" +
+      "<h4>Writing</h4><ul><li><b>Task Response</b> — ответили ли вы на вопрос и держали позицию.</li><li><b>Coherence &amp; Cohesion</b> — логика абзацев и связки.</li><li><b>Lexical Resource</b> — точность и диапазон лексики.</li><li><b>Grammatical Range</b> — сложные конструкции без ошибок.</li></ul>" +
+      "<h4>Speaking</h4><ul><li><b>Fluency &amp; Coherence</b> — темп без длинных пауз.</li><li><b>Lexical Resource</b> и <b>Grammatical Range</b> — как в Writing.</li><li><b>Pronunciation</b> — понятность, а не британский акцент.</li></ul>" +
+      "<div class='box goodbox'><b>Что из этого следует</b><p>Самый частый провал — Task Response: красивый текст не на тот вопрос. Это сразу потолок 5.0–6.0 по критерию. Поэтому первые две минуты — разбор вопроса.</p></div>"; }},
+    speaking:{min:30, title:"Part 2: две минуты без пауз", body:function(){ return "<h2>Part 2: две минуты без пауз</h2>" +
+      "<p>Карточка с темой, минута на подготовку, до двух минут речи. Страх замолчать на тридцатой секунде решается структурой, а не словарём.</p>" +
+      "<h4>Минута подготовки</h4><p>Не пишите предложения — начнёте читать, а это слышно и снижает Fluency. Пишите 4–5 слов-опор.</p>" +
+      "<h4>Схема «прошлое — настоящее — будущее»</h4><ul><li><b>Прошлое</b> — как всё началось.</li><li><b>Настоящее</b> — как сейчас, одна конкретная деталь.</li><li><b>Будущее</b> — что дальше, чего хотите.</li></ul>" +
+      "<div class='box'><b>Если кончились слова</b><p>Добавьте контраст: <code>although</code>, <code>whereas</code>, <code>unlike</code> — и у вас ещё 20 секунд на объяснение.</p></div>" +
+      "<h4>Задание</h4><p>Таймер на минуту, пять опорных слов, потом запись на две минуты. Отметьте каждую паузу длиннее трёх секунд.</p>"; }},
+    writing:{min:35, title:"Task 2: структура на 7.0", body:function(){ return "<h2>Task 2: структура на 7.0</h2>" +
+      "<p>Task 2 весит вдвое больше Task 1. Структура фиксированная — её можно отработать до автоматизма.</p>" +
+      "<h4>Четыре абзаца, 250+ слов</h4><ol><li><b>Introduction</b> — перефраз вопроса и позиция.</li><li><b>Body 1</b> — тезис, объяснение, пример.</li><li><b>Body 2</b> — то же для второго аргумента.</li><li><b>Conclusion</b> — повтор позиции, без новых идей.</li></ol>" +
+      "<h4>Где теряется балл</h4><p>Topic sentence должно отвечать на вопрос, а не объявлять тему.</p>" +
+      "<div class='box warnbox'><b>Слабо</b><p>«Firstly, let us consider the economic aspect of this issue.»</p></div>" +
+      "<div class='box goodbox'><b>Сильно</b><p>«The main economic argument against this policy is that it shifts costs onto small businesses.»</p></div>" +
+      "<h4>Задание</h4><p>Вопрос из банка, таймер 40 минут, первые 5 — на план. Отправьте текст на проверку: разбор придёт за сутки.</p>"; }},
+    listening:{min:30, title:"Section 3 и 4: где уходят баллы", body:function(){ return "<h2>Section 3 и 4: где уходят баллы</h2>" +
+      "<p>Section 1 и 2 обычно проходят почти без потерь. Ошибки начинаются во второй половине.</p>" +
+      "<h4>Section 3</h4><p>Разговор двух-трёх человек. Ответ зависит от того, <b>кто</b> что сказал — пометьте имена в вопросах заранее.</p>" +
+      "<h4>Section 4</h4><p>Лекция без паузы. Потеряли вопрос — не ищите, идите за следующим: пропущенный ответ стоит одного балла, потерянное место — пяти.</p>" +
+      "<h4>Ловушки</h4><ul><li><b>Самоисправление:</b> «at four — sorry, half past four». Верен второй вариант.</li><li><b>Лишние варианты:</b> слушайте вывод, а не список.</li></ul>" +
+      "<div class='box'><b>Указатели</b><p><code>however</code>, <code>actually</code>, <code>the key point is</code> почти всегда стоят перед ответом.</p></div>"; }},
+    reading:{min:30, title:"True / False / Not Given", body:function(){ return "<h2>True / False / Not Given</h2>" +
+      "<p>Самое ненавидимое задание Reading — и самое механическое. Почти все ошибки здесь одинаковые.</p>" +
+      "<h4>Что значит каждый вариант</h4><ul><li><b>True</b> — текст прямо подтверждает.</li><li><b>False</b> — текст прямо противоречит.</li><li><b>Not Given</b> — текст об этом молчит.</li></ul>" +
+      "<h4>Та самая ошибка</h4><p>Отвечать из знаний о мире, а не из текста. Если в пассаже о ценах ни слова — это Not Given, даже если в жизни это правда.</p>" +
+      "<div class='box warnbox'><b>Проверка себя</b><p>К каждому True и False покажите строку в тексте. Не можете — значит Not Given.</p></div>" +
+      "<h4>Порядок</h4><p>Ответы идут по тексту: нашли четвёртый — пятый ищите ниже, а не с начала.</p>"; }},
+    routine:{min:15, title:"Расписание, которое не бросите", body:function(){ return "<h2>Расписание, которое не бросите</h2>" +
+      "<p>Подготовку бросают не от нехватки времени, а от нереального плана: два часа в день держатся четыре дня.</p>" +
+      "<h4>Правило одного блока</h4><p>Привяжите занятие к привычке, а не к часу: «после утреннего чая» работает, «в 7:30» — нет.</p>" +
+      "<h4>Минимум на плохой день</h4><p>10 минут Listening — это сохранённая серия. Ноль — откат на неделю.</p>" +
+      "<div class='box'><b>Про пропуски</b><p>Не отрабатывайте пропуск двойной нагрузкой — это способ бросить на третий день.</p></div>"; }}
+  };
+
+  function weekPlan(){
+    var w = weeks(), weak = A.weak || "writing", rest = ORDER.filter(function(m){ return m !== weak; }), out = [];
+    out.push({n:1, title:"Диагностика и база", lessons:["mock","descriptors",weak,"routine"]});
+    for(var i = 2; i <= w; i++){
+      var f, t;
+      if(i === w){ f = weak; t = "Финальная подготовка"; }
+      else if(i % 2 === 0){ f = weak; t = MODNAME[weak] + ": глубокая отработка"; }
+      else { f = rest[(Math.floor(i/2)-1) % rest.length]; t = MODNAME[f] + " и словарь"; }
+      out.push({n:i, title:t, lessons:[f,"descriptors"]});
+    }
+    return out;
+  }
+  function weekUnlockDate(n){ return plusDays((n-1)*7); }
+  function totalW1(){ return weekPlan()[0].lessons.length; }
+  function doneW1(){ var c = 0; weekPlan()[0].lessons.forEach(function(id){ if(done["1-"+id]) c++; }); return c; }
+  function updateRing(){
+    var p = Math.round(doneW1()/totalW1()*100);
+    $("ringArc").setAttribute("stroke-dashoffset", String(163.4 - 163.4*p/100));
+    $("ringVal").textContent = p + "%";
+  }
+  function nextLesson(){ var ls = weekPlan()[0].lessons; for(var i=0;i<ls.length;i++){ if(!done["1-"+ls[i]]) return ls[i]; } return null; }
+
+  function renderApp(){
+    var body = $("appBody"); body.textContent = "";
+    var w = weeks();
+    if(tab === "today"){
+      $("appTitle").textContent = "Сегодня";
+      $("appSub").textContent = "Неделя 1 из " + w + " · цель " + f1(target());
+      var st = document.createElement("div"); st.className = "streak";
+      st.innerHTML = '<div><b>' + doneW1() + '</b><span>занятий</span></div><div><b>' + f1(overall()) + '</b><span>сейчас</span></div><div><b>' + f1(half(project(overall(), w, parseInt(A.daily,10)))) + '</b><span>прогноз</span></div>';
+      body.appendChild(st);
+      var nx = nextLesson(), card = document.createElement("div"); card.className = "today";
+      if(nx){
+        var L = LESSONS[nx];
+        card.innerHTML = '<span class="lb">Следующий шаг</span><h3>' + L.title + '</h3><p>' + L.min + ' минут · упор на ' + MODNAME[A.weak||"writing"] + '</p>';
+        var b = document.createElement("button"); b.className = "cta brand"; b.type = "button"; b.textContent = "Начать занятие";
+        b.addEventListener("click", function(){ openLesson(nx, 1); }); card.appendChild(b);
+      } else {
+        card.innerHTML = '<span class="lb">Неделя закрыта</span><h3>Отлично! Всё сделано</h3><p>Неделя 2 откроется ' + fmt(weekUnlockDate(2)) + '.</p>';
+      }
+      body.appendChild(card);
+      var ms = document.createElement("div"); ms.className = "mods";
+      var m = modules(), html = "";
+      ORDER.forEach(function(k){
+        var weakK = k === (A.weak||"writing");
+        html += '<div class="mod' + (weakK ? " weak" : "") + '"><span class="mn">' + MODNAME[k] + '</span><span class="mb"><i style="width:' + pos(m[k]) + '%"></i></span><span class="mv">' + f1(m[k]) + '</span></div>';
+      });
+      ms.innerHTML = html;
+      body.appendChild(ms);
+    }
+    if(tab === "prog"){
+      $("appTitle").textContent = "Программа";
+      $("appSub").textContent = w + " " + weeksWord(w) + " · упор на " + MODNAME[A.weak||"writing"];
+      weekPlan().forEach(function(wk){
+        var un = wk.n === 1, el = document.createElement("div");
+        el.className = "week" + (un ? "" : " locked") + (openWeek === wk.n ? " open" : "");
+        var hd = document.createElement("button"); hd.className = "whead"; hd.type = "button";
+        hd.innerHTML = '<span class="wn">' + wk.n + '</span><span class="wt"><b>' + wk.title + '</b><span>' + (un ? wk.lessons.length + " занятия · открыта" : "откроется " + fmt(weekUnlockDate(wk.n))) + '</span></span>' +
+          '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        hd.addEventListener("click", function(){ openWeek = openWeek === wk.n ? 0 : wk.n; renderApp(); });
+        el.appendChild(hd);
+        if(openWeek === wk.n){
+          var bd = document.createElement("div"); bd.className = "wbody";
+          wk.lessons.forEach(function(id){
+            var L = LESSONS[id], key = wk.n + "-" + id, li = document.createElement("button");
+            li.type = "button"; li.className = "les" + (done[key] ? " done" : "") + (un ? "" : " lock");
+            li.innerHTML = '<span class="lbox">' + CHECK + '</span><span class="lt">' + L.title + '</span><span class="lm">' + L.min + ' мин</span>';
+            if(un){ li.addEventListener("click", function(){ openLesson(id, wk.n); }); } else { li.disabled = true; }
+            bd.appendChild(li);
+          });
+          el.appendChild(bd);
+        }
+        body.appendChild(el);
+      });
+    }
+    if(tab === "prof"){
+      $("appTitle").textContent = "Профиль";
+      $("appSub").textContent = "Подписка и доступ";
+      var c = document.createElement("div"); c.className = "pcard";
+      if(plan === "p1"){
+        c.innerHTML = cancelled
+          ? '<span class="stl off">Отменена</span><div class="ph"><span class="pn">По месяцам</span><span class="pa">₹1 199</span></div><p class="pd">Списаний больше не будет. Доступ до ' + fmt(plusDays(7)) + '.</p>'
+          : '<span class="stl">Активна</span><div class="ph"><span class="pn">По месяцам</span><span class="pa">₹1 199</span></div><p class="pd">Следующее списание ' + fmt(plusDays(7)) + ', затем каждые 30 дней.</p>';
+      } else {
+        c.innerHTML = '<span class="stl">Оплачено</span><div class="ph"><span class="pn">Курс до экзамена</span><span class="pa">₹2 499</span></div><p class="pd">Без автопродления. Доступ до ' + fmt(plusDays(90)) + '.</p>';
+      }
+      body.appendChild(c);
+      var dt = document.createElement("div"); dt.className = "pcard";
+      dt.innerHTML = '<div class="kv"><span>Оплачено</span><b>' + fmt(paidOn || new Date()) + '</b></div><div class="kv"><span>Способ</span><b>' + {upi:"UPI",card:"Карта",nb:"Net Banking"}[method] + '</b></div>' +
+        '<div class="kv"><span>Цель</span><b>' + f1(target()) + '</b></div><div class="kv"><span>Программа</span><b>' + w + ' нед.</b></div>';
+      body.appendChild(dt);
+      var wa = document.createElement("button"); wa.className = "cta"; wa.type = "button"; wa.style.background = "var(--wa)"; wa.style.boxShadow = "none"; wa.style.marginBottom = "10px";
+      wa.textContent = "Поддержка в WhatsApp"; wa.addEventListener("click", function(){ openWa("profile"); });
+      body.appendChild(wa);
+      if(plan === "p1" && !cancelled){
+        var mn = document.createElement("div"); mn.className = "mandate";
+        mn.innerHTML = '<b>Регулярные списания</b><p>Уведомим за 24 часа до каждого списания. Отмена — кнопкой ниже, без письма в поддержку.</p>';
+        body.appendChild(mn);
+        var cb = document.createElement("button"); cb.className = "ghost danger"; cb.type = "button"; cb.textContent = "Отменить подписку";
+        cb.onclick = function(){
+          track("cancel_start"); cb.textContent = "Точно отменить? Нажмите ещё раз";
+          cb.onclick = function(){ cancelled = true; track("cancel_confirm"); renderApp(); };
+        };
+        body.appendChild(cb);
+      }
+      var ag = document.createElement("button"); ag.className = "ghost"; ag.type = "button"; ag.style.marginTop = "10px"; ag.textContent = "Пройти разбор заново";
+      ag.addEventListener("click", resetAll); body.appendChild(ag);
+    }
+    updateRing();
+  }
+  function setTab(t){ tab = t; ["today","prog","prof"].forEach(function(k){ $("t-"+k).setAttribute("aria-pressed", k === t ? "true" : "false"); }); renderApp(); }
+
+  function openLesson(id, wk){
+    curLesson = {id:id, wk:wk};
+    var L = LESSONS[id];
+    $("lesCrumb").textContent = "Неделя " + wk + " · " + L.min + " мин";
+    $("lesBody").innerHTML = L.body();
+    var k = wk + "-" + id;
+    $("lesDone").textContent = done[k] ? "Пройдено ✓" : "Отметить пройденным";
+    $("lesDone").disabled = !!done[k];
+    track("lesson_open", {lesson:id, week:wk});
+    show("s-lesson");
+  }
+
+  function resetAll(){
+    A = {target:"7"}; idx = 0; plan = "p2"; method = "upi"; tab = "today"; done = {}; openWeek = 1; cancelled = false; paidOn = null;
+    renderBands(); $("unlocks").innerHTML = BANDS[2].d;
+    $("start").firstChild.nodeValue = "Хватает ли мне на 7.0? ";
+    pickPlan("p2");
+    show("s-hero");
+  }
+
+  /* ---------- WhatsApp ---------- */
+  function openWa(where){ track("whatsapp_click", {from:where}); $("waSheet").hidden = false; }
+
+  /* ---------- экраны ---------- */
+  var DEF = {goal:"pr", dest:"ca", target:"7", prior:"no", when:"m2", weak:"writing", level:"passive", block:"nofeedback", daily:"30"};
+  function fillDef(){ for(var k in DEF){ if(!A[k]) A[k] = DEF[k]; } }
+  var JUMPS = [
+    {t:"Лендинг", d:"Отзывы, страны, цены", go:function(){ show("s-hero"); }},
+    {t:"Квиз", d:"9 вопросов", go:function(){ idx = 0; show("s-quiz"); render(); }},
+    {t:"Результат", d:"Оценка по модулям и прогноз", go:function(){ fillDef(); result(); }},
+    {t:"Пейволл", d:"Тарифы и сравнение цен", go:function(){ fillDef(); openPay(); }},
+    {t:"Оплата", d:"UPI, карта, Net Banking", go:function(){ fillDef(); openCheckout(); }},
+    {t:"Программа", d:"Продукт за пейволлом", go:function(){ fillDef(); paidOn = new Date(); setTab("prog"); show("s-app"); }},
+    {t:"Урок", d:"Полный материал занятия", go:function(){ fillDef(); openLesson("writing", 1); }},
+    {t:"Профиль", d:"Статус и отмена подписки", go:function(){ fillDef(); plan = "p1"; paidOn = new Date(); setTab("prof"); show("s-app"); }}
+  ];
+  function buildJumps(){
+    var box = $("jumpList"); box.textContent = "";
+    JUMPS.forEach(function(j,i){
+      var b = document.createElement("button"); b.className = "jrow"; b.type = "button";
+      b.innerHTML = '<span class="jn">' + (i+1) + '</span><span class="jd">' + j.t + '<span>' + j.d + '</span></span>';
+      b.addEventListener("click", function(){ $("sheet").hidden = true; j.go(); });
+      box.appendChild(b);
+    });
+  }
+
+  /* ---------- события ---------- */
+  function startFunnel(){ track("funnel_start", {preselected_target: A.target || null}); idx = 0; show("s-quiz"); render(); }
+  $("start").addEventListener("click", startFunnel);
+  $("start2").addEventListener("click", startFunnel);
+  $("qback").addEventListener("click", function(){ if(idx > 0){ idx--; render(); } });
+  $("toPay").addEventListener("click", openPay);
+  $("p1").addEventListener("click", function(){ pickPlan("p1"); });
+  $("p2").addEventListener("click", function(){ pickPlan("p2"); });
+  $("toCheckout").addEventListener("click", openCheckout);
+  $("payBack").addEventListener("click", openPay);
+  $("pm-upi").addEventListener("click", function(){ pickMethod("upi"); });
+  $("pm-card").addEventListener("click", function(){ pickMethod("card"); });
+  $("pm-nb").addEventListener("click", function(){ pickMethod("nb"); });
+  $("payNow").addEventListener("click", function(){
+    var base = plan === "p1" ? 299 : 2499; paidOn = new Date();
+    track("purchase", {plan: plan === "p1" ? "monthly" : "onetime", amount: base + Math.round(base*0.18), method:method, currency:"INR"});
+    $("okText").textContent = plan === "p1"
+      ? "Первая неделя открыта. Следующее списание " + fmt(plusDays(7)) + " — предупредим за сутки."
+      : "Доступ открыт до " + fmt(plusDays(90)) + ". Больше ничего не спишется.";
+    show("s-ok");
+  });
+  $("toApp").addEventListener("click", function(){ track("app_open"); setTab("today"); show("s-app"); });
+  $("t-today").addEventListener("click", function(){ setTab("today"); });
+  $("t-prog").addEventListener("click", function(){ setTab("prog"); });
+  $("t-prof").addEventListener("click", function(){ setTab("prof"); });
+  $("lesBack").addEventListener("click", function(){ show("s-app"); renderApp(); });
+  $("lesDone").addEventListener("click", function(){
+    if(!curLesson) return;
+    done[curLesson.wk + "-" + curLesson.id] = true;
+    track("lesson_complete", {lesson:curLesson.id, week:curLesson.wk});
+    $("lesDone").textContent = "Пройдено ✓"; $("lesDone").disabled = true;
+    setTimeout(function(){ show("s-app"); renderApp(); }, 400);
+  });
+  $("restart").addEventListener("click", resetAll);
+
+  $("waTop").addEventListener("click", function(){ openWa("header"); });
+  $("waSticky").addEventListener("click", function(){ openWa("sticky"); });
+  $("waPay").addEventListener("click", function(){ openWa("paywall"); });
+  $("waCo").addEventListener("click", function(){ openWa("checkout"); });
+  $("waOpen").addEventListener("click", function(){ $("waSheet").hidden = true; toast("Демо: номер WhatsApp подключается при запуске"); });
+  $("waClose").addEventListener("click", function(){ $("waSheet").hidden = true; });
+  $("waSheet").addEventListener("click", function(e){ if(e.target === $("waSheet")) $("waSheet").hidden = true; });
+
+  $("jumpBtn").addEventListener("click", function(){ buildJumps(); $("sheet").hidden = false; });
+  $("sheetClose").addEventListener("click", function(){ $("sheet").hidden = true; });
+  $("sheet").addEventListener("click", function(e){ if(e.target === $("sheet")) $("sheet").hidden = true; });
+
+  /* ---------- старт ---------- */
+  A.target = "7";
+  renderBands(); $("unlocks").innerHTML = BANDS[2].d;
+  $("start").firstChild.nodeValue = "Хватает ли мне на 7.0? ";
+  renderCountries(); renderReviews();
+  payTerms();
+  show("s-hero");
+})();
+</script>
+
+</body>
+</html>
